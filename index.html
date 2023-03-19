@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Personal Portfolio Website - Tejal Vasaikar</title>
+        <link rel="stylesheet" href="style.css">
+        <script src="https://kit.fontawesome.com/0c026b5ae5.js" crossorigin="anonymous"></script>
+    </head>
+    <body>
+        <div id="header">
+            <div class="container">
+                <nav>
+                    <img src="Portfolio images/image4.jpg" class="logo">
+                    <ul id="sidemenu">
+                        <li><a href="#header">Home</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#projects">Projects</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                        <i class="fas fa-times" onclick="closemenu()"></i>
+                    </ul>
+                    <i class="fas fa-bars" onclick="openmenu()"></i>
+                </nav>
+                <div class="header-text">
+                    <p>Java Developer</p>
+                    <h1><span>Tejal</span><br> Vasaikar</h1>
+                </div>
+            </div>
+        </div>
+<!-------------------------------about------------------------------------>
+
+        <div id="about">
+            <div class="container">
+                <div class="row">
+                    <div class="about-col-1">
+                        <img src = "Portfolio images/image1.jpg">
+                    </div>
+                    <div class="about-col-2">
+                    <h1 class="subtitle">About Me</h1>
+
+                    <p class="para">I am person with great interpersonal skills , couragious to accept professional challenges with excellent time 
+                        management and problem-solving skills. Reliable employee offering excellent communication and good judgment. 
+                        Performs equally well in independent and team-based environment, committed for 100% delivery of assigned 
+                        projects. Initiative to help the team and focus project deadlines and deliverables. </p>
+                        
+                        <div class="tab-title">
+                            <p class="tab-links active-link" onclick="opentab('skills')">Skills</p>
+                            <p class="tab-links" onclick="opentab('education')">Education</p>
+                            <p class="tab-links" onclick="opentab('certification')">Certification</p>
+                        </div>
+                        <div class="tab-contents active-tab" id="skills">
+                            <ul>
+                                <li><span>Programming language</span><br>Java(Core Java)<br>HTML,CSS</li>
+                            
+                                <li><span>More</span><br>Object Oriented Programming(OOPS)<br>Data Structures And Algorithms(DSA)</li>
+                            </ul>
+                        </div>
+                        <div class="tab-contents" id="education">
+                            <ul>
+                                <li><span>2019-2022</span><br>Bsc. Forensic science and Cyber Security</li>
+                                <li><span>Pursuing</span><br>Msc. Cyber Security</li>
+                            </ul>
+                        </div>
+                        <div class="tab-contents" id="certification">
+                            <ul>
+                                <li><span>6 months</span><br>Full stack Java Development Course</li>
+                                <li><span>3 months</span><br>Alpha Java Placement Course</li>
+                            </ul>
+                        </div>
+                  </div>
+            </div>
+        </div>
+    </div>
+
+    <!------------------------------projects----------------------->
+    <div id="projects">
+        <div class="container">
+            <h1 class="sub-title">My Projects</h1>
+            <div class="work-list">
+                <div class="work">
+                    <img src="Portfolio images/work1.jpeg">
+                    <div class="layer">
+                        <h3>API based MY AVATAR</h3>
+                        <p>This website provides you a animated avatar by taking an input of your name</p>
+                        <a href="https://getmyavatar.netlify.app/"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--------------------------contact--------------------------->
+    <div id="contact">
+        <div class="container">
+            <div class="row">
+                <div class="contact-left">
+                    <h1 class="sub-title">Contact Me</h1>
+                    <p><i class="fas fa-paper-plane"></i> tejalvasaikar43@gmail.com</p>
+                    <p><i class="fas fa-phone-square-alt"></i> 9359192963</p>
+                    <div class="social-icon">
+                        <a href=""><i class="fab fa-linkedin"></i></a>
+                    </div>
+                    <a href="resume 1.pdf" download class="btn">Download CV</a>
+                </div>
+                <div class="contact-right">
+                    <form name="submit-to-google-sheet">
+                        <input type="text" name="Name" placeholder="Your Name" required>
+                        <input type="email" name="Email" placeholder="Your Email" required>
+                        <textarea name="Message" rows="6" placeholder="Your message"></textarea>
+                        <button type="submit" class="btn btn2">Submit</button>
+                    </form>
+                    <span id="msg"></span>
+                
+                </div>
+            </div>
+        </div>
+<div class="copyright">
+    <p>Copyright @ Tejal <i class="fas fa-heart"></i> .</p>
+</div>
+
+    </div>
+
+    <script>
+
+        var tablinks = document.getElementsByClassName("tab-links");
+        var tabcontents = document.getElementsByClassName("tab-contents");
+
+        function opentab(tabname){
+            for(tablink of tablinks){
+                tablink.classList.remove("active-link");
+            }
+            for(tabcontent of tabcontents){
+                tabcontent.classList.remove("active-tab");
+            }
+            event.currentTarget.classList.add("active-link");
+            document.getElementById(tabname).classList.add("active-tab");
+        }
+
+
+
+
+
+    </script>
+    <script>
+
+        var sidemenu = document.getElementById("sidemenu");
+        function openmenu(){
+            sidemenu.style.right = "0";
+        }
+        function closemenu(){
+            sidemenu.style.right =  "-200px";
+        }
+    </script>
+
+<script>
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbyxfEp73OtV57vXL0iFJEKQ_m9Hr0nOy8QyZbVrEnkvwMjHHp3hBiVNOtEAJe79gAnu/exec'
+    const form = document.forms['submit-to-google-sheet']
+    const msg = document.getElementById("msg")
+  
+    form.addEventListener('submit', e => {
+      e.preventDefault()
+      fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+        .then(response => {msg.innerHTML = "Message sent successfully"
+    setTimeout(function(){
+        msg.innerHTML=""
+    },3000)
+    form.reset()
+    })
+        .catch(error => console.error('Error!', error.message))
+    })
+  </script>
+
+
+    </body>
+</html>
